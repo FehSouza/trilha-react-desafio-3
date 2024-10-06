@@ -9,6 +9,10 @@ export const Container = styled.main`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
 `
 
 export const Wrapper = styled.div`
@@ -65,7 +69,7 @@ export const EsqueciText = styled.p`
   color: #e5e044;
 `
 
-export const CriarText = styled.p`
+export const CriarText = styled.a`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;

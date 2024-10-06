@@ -8,6 +8,10 @@ export const Container = styled.main`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
 `
 
 export const Title = styled.h3`

@@ -8,6 +8,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
 `
 
 export const Row = styled.div`
@@ -48,11 +52,11 @@ export const Menu = styled.a`
 export const MenuRight = styled.a`
   font-family: 'Open Sans';
   font-style: normal;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 25px;
   color: #ffffff;
-  margin-right: 12px;
   text-decoration: none;
+  margin-right: 8px;
 `
 
 export const UserPicture = styled.img`
@@ -67,4 +71,8 @@ export const Input = styled.input`
   flex: 1;
   border: 0;
   color: #ffffff;
+`
+
+export const LinkHome = styled.a`
+  display: flex;
 `

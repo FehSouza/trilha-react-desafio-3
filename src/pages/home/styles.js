@@ -9,6 +9,10 @@ export const Container = styled.main`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
 `
 
 export const Title = styled.h2`
