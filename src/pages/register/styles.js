@@ -84,7 +84,6 @@ export const LinkContainer = styled.span`
   color: #ffffff;
 
   a {
-    text-decoration: none;
     color: #23dd7a;
   }
 `

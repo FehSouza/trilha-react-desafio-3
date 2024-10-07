@@ -1,12 +1,19 @@
-import React from 'react'
-import { Controller } from 'react-hook-form'
-import { IconContainer, InputContainer, InputText } from './styles'
+import React, { forwardRef } from 'react'
+import { Container, Error, Icon, InputText, InputWrapper } from './styles'
 
-export const Input = ({ leftIcon, name, control, ...rest }) => {
+export const Input = forwardRef(({ icon, placeholder, name, type = 'text', setValues, errors }, ref) => {
+  const handleInput = (ref, name) => setValues((prev) => ({ ...prev, [name]: ref.current.value }))
+
   return (
-    <InputContainer>
-      {leftIcon && <IconContainer>{leftIcon}</IconContainer>}
-      <Controller name={name} control={control} render={({ field }) => <InputText {...field} {...rest} />} />
-    </InputContainer>
+    <Container>
+      <InputWrapper>
+        {!!icon && <Icon>{icon}</Icon>}
+        <InputText placeholder={placeholder} name={name} type={type} ref={ref} onInput={() => handleInput(ref, name)} />
+      </InputWrapper>
+
+      {!!errors[name] && <Error>{errors[name]}</Error>}
+    </Container>
   )
-}
+})
+
+Input.displayName = 'Input'

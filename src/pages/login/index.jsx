@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { MdEmail, MdLock } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
-import { Button, Header, Input } from '../../components'
+import { Button, Header, InputDefault,  } from '../../components'
 import { api } from '../../services/api'
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles'
 
@@ -42,9 +42,9 @@ export const Login = () => {
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Input placeholder="E-mail" leftIcon={<MdEmail size={18} />} name="email" control={control} />
+              <InputDefault placeholder="E-mail" leftIcon={<MdEmail size={18} />} name="email" control={control} />
               {errors.email && <span>E-mail é obrigatório</span>}
-              <Input type="password" placeholder="Senha" leftIcon={<MdLock size={18} />} name="senha" control={control} />
+              <InputDefault type="password" placeholder="Senha" leftIcon={<MdLock size={18} />} name="senha" control={control} />
               {errors.senha && <span>Senha é obrigatório</span>}
               <Button title="Entrar" variant="secondary" type="submit" />
             </form>
